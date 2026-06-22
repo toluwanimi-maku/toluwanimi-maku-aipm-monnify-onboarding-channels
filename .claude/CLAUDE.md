@@ -37,7 +37,9 @@ structured artifact creation.
 | CAPABILITY-TAPT-PTSP | Terminal Service Provider Operations | Mark Momoh |
 | CAPABILITY-TAPT-TPPC | Third Party Processing | Ruth Adetunji |
 | CAPABILITY-TAPT-TRXN | Transaction Processing Suite | Khadijat Musa |
-| CAPABILITY-TAPT-MCOB | Monnify Channels and Onboarding | Toluwanimi Maku |
+| CAPABILITY-TAPT-MCOB | Monnify Channels and Onboarding (broad) | Toluwanimi Maku |
+| CAPABILITY-TAPT-MONB | Monnify Merchant Onboarding (practice) | Toluwanimi Maku |
+| CAPABILITY-TAPT-MCHE | Monnify Channel Enablement (practice) | Toluwanimi Maku |
 
 ## Behaviour rules
 
