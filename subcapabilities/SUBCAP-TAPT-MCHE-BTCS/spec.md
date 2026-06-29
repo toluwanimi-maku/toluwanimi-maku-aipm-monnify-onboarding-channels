@@ -55,9 +55,8 @@ and bulk or batch payment collection.
 
 - **Provisioning failure** — if virtual account provisioning fails, the merchant receives
   an error and can retry cleanly. Setup cannot be left in a partial or stuck state.
-- **Webhook delivery failure** — the system retries a configurable number of attempts;
-  if all retries are exhausted, the transfer is flagged as unmatched and escalated to
-  the ops queue. (Retry count declared as a config parameter in `team-parameters.md`.)
+- **Webhook delivery failure** — the system retries 2 times; if both retries are
+  exhausted, the transfer is flagged as unmatched and escalated to the ops queue.
 - **Wrong-amount transfer** — fulfilment is not automatically blocked. Merchants
   configure a tolerance window; transfers within that window are matched and fulfilled,
   outside it are held for merchant review. (Tolerance window declared as a config
