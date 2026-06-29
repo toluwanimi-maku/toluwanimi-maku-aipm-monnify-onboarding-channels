@@ -51,11 +51,14 @@ and bulk or batch payment collection.
 - **NIP** — the only hard infrastructure dependency; virtual account routing and
   settlement depend on NIP availability and settlement windows.
 
-## Open Questions
+## Edge Cases and Failure Modes
 
-- Failure mode: if virtual account provisioning fails mid-setup, does the merchant
-  see an error and retry cleanly, or can setup be left in a partial state?
-- Failure mode: webhook delivery failure — how many retries before a transfer is
-  flagged as unmatched for ops review?
-- Failure mode: customer sends wrong amount to a virtual account — is fulfilment
-  blocked automatically, or does the merchant resolve manually after notification?
+- **Provisioning failure** — if virtual account provisioning fails, the merchant receives
+  an error and can retry cleanly. Setup cannot be left in a partial or stuck state.
+- **Webhook delivery failure** — the system retries a configurable number of attempts;
+  if all retries are exhausted, the transfer is flagged as unmatched and escalated to
+  the ops queue. (Retry count declared as a config parameter in `team-parameters.md`.)
+- **Wrong-amount transfer** — fulfilment is not automatically blocked. Merchants
+  configure a tolerance window; transfers within that window are matched and fulfilled,
+  outside it are held for merchant review. (Tolerance window declared as a config
+  parameter in `team-parameters.md`.)
